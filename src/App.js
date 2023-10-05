@@ -1,5 +1,6 @@
 import React from 'react';
 import "./resume.css"
+
 const Resume = () => {
   const resumeData = {
     education: [
@@ -60,9 +61,10 @@ const Resume = () => {
   };
 
     return (
+
         <div className="resume-container">
             <h1>Resume</h1>
-
+            <title>Ethan C Herring</title>
             <section className="section">
                 <h2>Education</h2>
                 {resumeData.education.map((edu, index) => (
