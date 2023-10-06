@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function ContactForm() {
+    document.title = "Ethan Herring";
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -16,7 +18,8 @@ function ContactForm() {
         });
     };
     return (
-        <form name="contact" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
             <p>
                 <label>
                     Your Name:
@@ -66,8 +69,12 @@ function ContactForm() {
             <p>
                 <button type="submit">Send</button>
             </p>
+            <div>
+            <Link to="/">Home</Link>
+            </div>
         </form>
-    );
+
+);
 }
 
 export default ContactForm;

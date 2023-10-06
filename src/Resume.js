@@ -1,7 +1,10 @@
 import React from 'react';
 import "./resume.css"
+import { Link } from 'react-router-dom';
+
 
 const Resume = () => {
+    document.title = "Ethan Herring";
     const resumeData = {
         education: [
             // {
@@ -126,6 +129,7 @@ const Resume = () => {
                         GitHub: <a href={resumeData.contact.github}>{resumeData.contact.github}</a>
                     </p>
                 </div>
+                <Link to="/contact">Contact Me</Link>
             </section>
 
             <footer className="footer">
