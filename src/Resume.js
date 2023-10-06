@@ -65,18 +65,33 @@ const Resume = () => {
     };
 
     return (
-
         <div className="resume-container">
-            <h1>Ethan Herring</h1>
-            <title>Ethan C Herring</title>
+            <header className="header">
+                <h1 className="name">Ethan Herring</h1>
+            </header>
+            <section className="section">
+                <h2>Contact Info</h2>
+                <div className="contact-info">
+                    <p className="contact-item">
+                        Email: <a href={`mailto:${resumeData.contact.email}`}>{resumeData.contact.email}</a>
+                    </p>
+                    <p className="contact-item">Phone: {resumeData.contact.phone}</p>
+                    <p className="contact-item">
+                        GitHub: <a href={resumeData.contact.github} target="_blank" rel="noopener noreferrer">{resumeData.contact.github}</a>
+                    </p>
+                    <p className="contact-item">
+                        LinkedIn: <a href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer">{resumeData.contact.linkedin}</a>
+                    </p>
+                </div>
+            </section>
             <section className="section">
                 <h2>Education</h2>
                 {resumeData.education.map((edu, index) => (
-                    <div key={index}>
-                        <p>Degree: {edu.degree}</p>
-                        <p>School: {edu.school}</p>
-                        <p>Location: {edu.location}</p>
-                        <p>Date: {edu.date}</p>
+                    <div className="education" key={index}>
+                        <h3 className="degree">{edu.degree}</h3>
+                        <p className="school">{edu.school}</p>
+                        <p className="location">{edu.location}</p>
+                        <p className="date">{edu.date}</p>
                     </div>
                 ))}
             </section>
@@ -88,22 +103,26 @@ const Resume = () => {
 
             <section className="section">
                 <h2>Skills</h2>
-                <div className="skills">
-                    <ul>
-                        {resumeData.skills.map((skill, index) => (
-                            <li key={index}>{skill}</li>
-                        ))}
-                    </ul>
-                </div>
+                <ul className="skills">
+                    {resumeData.skills.map((skill, index) => (
+                        <li className="skill" key={index}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
             </section>
 
             <section className="section">
                 <h2>Projects</h2>
                 {resumeData.projects.map((project, index) => (
                     <div className="project-card" key={index}>
-                        <h3><a href={project.link}>{project.name}</a></h3>
-                        <p>Date: {project.date}</p>
-                        <p>{project.description}</p>
+                        <h3 className="project-name">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                {project.name}
+                            </a>
+                        </h3>
+                        <p className="project-date">{project.date}</p>
+                        <p className="project-description">{project.description}</p>
                     </div>
                 ))}
             </section>
@@ -111,30 +130,19 @@ const Resume = () => {
             <section className="section">
                 <h2>Work Experience</h2>
                 {resumeData.workExperience.map((exp, index) => (
-                    <div key={index}>
-                        <p>Position: {exp.position}</p>
-                        <p>Company: {exp.company}</p>
-                        <p>Date: {exp.date}</p>
-                        <p>Location: {exp.location}</p>
-                        <p>{exp.sep}</p>
+                    <div className="work-experience" key={index}>
+                        <h3 className="position">{exp.position}</h3>
+                        <p className="company">{exp.company}</p>
+                        <p className="date">{exp.date}</p>
+                        <p className="location">{exp.location}</p>
                     </div>
                 ))}
             </section>
 
-            <section className="section">
-                <h2>Contact Info</h2>
-                <div className="contact-info">
-                    <p>Email: {resumeData.contact.email}</p>
-                    <p>Phone: {resumeData.contact.phone}</p>
-                    <p>
-                        GitHub: <a href={resumeData.contact.github}>{resumeData.contact.github}</a>
-                    </p>
-                    <p>Linkedin: <a href={resumeData.contact.linkedin}>{resumeData.contact.linkedin}</a></p>
-                </div>
-            </section>
+
 
             <footer className="footer">
-                © {new Date().getFullYear()} Ethan Herring
+                &copy; {new Date().getFullYear()} Ethan Herring
             </footer>
         </div>
     );
