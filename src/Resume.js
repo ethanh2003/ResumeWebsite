@@ -1,6 +1,6 @@
 import React from 'react';
 import "./resume.css"
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const Resume = () => {
@@ -60,13 +60,14 @@ const Resume = () => {
             email: 'echerring.ech@gmail.com',
             phone: '910-249-2244',
             github: 'https://github.com/ethanh2003',
+            linkedin: 'https://www.linkedin.com/in/ethan-herring/'
         },
     };
 
     return (
 
         <div className="resume-container">
-            <h1>Resume</h1>
+            <h1>Ethan Herring</h1>
             <title>Ethan C Herring</title>
             <section className="section">
                 <h2>Education</h2>
@@ -128,8 +129,8 @@ const Resume = () => {
                     <p>
                         GitHub: <a href={resumeData.contact.github}>{resumeData.contact.github}</a>
                     </p>
+                    <p>Linkedin: <a href={resumeData.contact.linkedin}>{resumeData.contact.linkedin}</a></p>
                 </div>
-                <Link to="/contact">Contact Me</Link>
             </section>
 
             <footer className="footer">

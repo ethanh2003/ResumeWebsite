@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Resume from './Resume.js';
-import Contact from './Contact.js';
+
 
 const App = () => {
+    document.title = "Ethan Herring";
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Resume />} />
 
-                <Route path="/contact" element={<Contact />} />
             </Routes>
         </Router>
     );
