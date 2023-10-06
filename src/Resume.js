@@ -143,6 +143,7 @@ const Resume = () => {
 
             <footer className="footer">
                 &copy; {new Date().getFullYear()} Ethan Herring
+                Coded using ReactJS
             </footer>
         </div>
     );
